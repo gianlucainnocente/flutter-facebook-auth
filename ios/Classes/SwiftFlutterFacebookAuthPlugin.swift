@@ -6,7 +6,7 @@ import FBSDKLoginKit
 
 public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
     
-    let loginManager : LoginManager = LoginManager(loginBehavior: .webViewOnly)
+    let loginManager : LoginManager = LoginManager(loginBehavior: .web)
     var pendingResult: FlutterResult? = nil
     
     
