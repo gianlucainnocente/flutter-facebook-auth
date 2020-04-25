@@ -74,7 +74,7 @@ public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
         
         let viewController: UIViewController = (UIApplication.shared.delegate?.window??.rootViewController)!
 
-        login.loginBehavior = .webOnly
+        loginManager.loginBehavior = .webOnly
         loginManager.logIn(permissions: permissions, from: viewController, handler: { (result, error) -> Void in
             
             if(error==nil){
