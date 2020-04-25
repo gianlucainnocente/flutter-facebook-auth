@@ -6,7 +6,7 @@ import FBSDKLoginKit
 
 public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
     
-    let loginManager : LoginManager = LoginManager()
+    let loginManager : LoginManager = LoginManager(loginBehavior: .webViewOnly)
     var pendingResult: FlutterResult? = nil
     
     
@@ -74,7 +74,6 @@ public class SwiftFlutterFacebookAuthPlugin: NSObject, FlutterPlugin {
         
         let viewController: UIViewController = (UIApplication.shared.delegate?.window??.rootViewController)!
 
-        loginManager.loginBehavior = .webOnly
         loginManager.logIn(permissions: permissions, from: viewController, handler: { (result, error) -> Void in
             
             if(error==nil){
